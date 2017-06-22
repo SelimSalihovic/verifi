@@ -161,7 +161,7 @@ class Verifi {
             // Dispatch the invalid credentials event
             $this->dispatcher->dispatch(new InvalidCredentials(null));
 
-            return call_user_func($callback);
+            return call_user_func($callback, $user);
         }
 
         // Dispatch the verified event
