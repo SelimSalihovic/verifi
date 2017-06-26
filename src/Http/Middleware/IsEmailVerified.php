@@ -20,7 +20,7 @@ class IsEmailVerified {
      */
     public function handle($request, Closure $next) {
 
-        if (!is_null($request->user()) && !$request->user()->isVerified()) {
+        if (!is_null($request->user()) && !$request->user()->isEmailVerified()) {
             throw new UserNotVerifiedException();
         }
 
