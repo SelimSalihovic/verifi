@@ -65,11 +65,11 @@ class Verifi {
      * Send a email verification link to a user.
      *
      * @param \Meness\Verifi\Entities\Traits\Contracts\Verifi|\Illuminate\Notifications\Notifiable $user
-     * @param null                                                                                 $callback
+     * @param callable|null                                                                        $callback
      *
      * @return mixed
      */
-    public function resend($user, $callback = null) {
+    public function resend($user, callable $callback = null) {
 
         $expiration = Carbon::now()->addMinutes($this->expiration)->timestamp;
         $token      = $this->createToken($user, $expiration);
@@ -78,7 +78,7 @@ class Verifi {
 
         $this->dispatcher->dispatch(new VerificationSent($user));
 
-        return call_user_func($callback, $user);
+        return is_callable($callback) ? call_user_func($callback, $user) : null;
     }
 
     /**
@@ -129,11 +129,11 @@ class Verifi {
 
     /**
      * @param \Illuminate\Http\Request $request
-     * @param null                     $callback
+     * @param callable|null            $callback
      *
      * @return mixed
      */
-    public function verify($request, $callback = null) {
+    public function verify($request, callable $callback = null) {
 
         $data = $request->only('token', 'email', 'expiration');
 
