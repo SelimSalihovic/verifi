@@ -148,9 +148,7 @@ class Verifi {
             $validator->validate();
         }
 
-        list('token' => $token, 'email' => $email, 'expiration' => $expiration) = $data;
-
-        $user = $this->validateCredentials($token, $email, $expiration);
+        $user = $this->validateCredentials($data['token'], $data['email'], $data['expiration']);
 
         if (is_bool($user)) {
             // Dispatch the invalid credentials event
