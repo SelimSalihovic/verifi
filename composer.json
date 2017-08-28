@@ -1,5 +1,5 @@
 {
-  "name": "meness/verifi",
+  "name": "SelimSalihovic/verifi",
   "description": "A Laravel package to handle email verification.",
   "keywords": [
     "laravel",
@@ -11,21 +11,21 @@
   "time": "2017-05-30",
   "authors": [
     {
-      "name": "Alireza Eskandarpour Shoferi",
-      "email": "aesshoferi@gmail.com",
-      "homepage": "https://about.me/meness",
+      "name": "Selim Salihovic",
+      "email": "selim.salihovic@gmail.com",
+      "homepage": "https://selimsalihovic.github.io",
       "role": "Developer"
     }
   ],
   "support": {
-    "email": "aesshoferi@gmail.com",
-    "issues": "https://github.com/meness/verifi/issues",
-    "source": "https://github.com/meness/verifi",
-    "docs": "https://github.com/meness/verifi/blob/master/README.md"
+    "email": "selim.salihovic@gmail.com",
+    "issues": "https://github.com/SelimSalihovic/verifi/issues",
+    "source": "https://github.com/SelimSalihovic/verifi",
+    "docs": "https://github.com/SelimSalihovic/verifi/blob/master/README.md"
   },
   "minimum-stability": "dev",
   "require": {
-    "php": "^7.1",
+    "php": "^7.0",
     "illuminate/contracts": "~5.4",
     "illuminate/queue": "~5.4",
     "illuminate/auth": "~5.4",
